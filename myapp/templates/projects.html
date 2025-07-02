@@ -1,0 +1,226 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Thashib T K | Portfolio </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="ThemeZaa">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- google fonts preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" href="{% static 'css/vendors.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/icon.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/freelancer.css' %}" />
+        <style>
+            .portfolio-image {
+                height: 16rem; /* Fixed height for all portfolio images */
+                width: 26rem
+                overflow: hidden;
+            }
+
+            .portfolio-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .hover-details {
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                width: 100%;
+                padding: 15px;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                transition: bottom 0.3s ease-in-out;
+            }
+
+            .portfolio-box:hover .hover-details {
+                bottom: 0;
+            }
+
+            @media (max-width: 768px) {
+                .portfolio-image {
+                    height: 220px;
+                }
+            }
+
+        </style>
+    </head>
+    <body data-mobile-nav-style="classic" class="custom-cursor">
+
+        <!-- end header -->
+        {% include 'components/header.html' %}
+
+
+        <!-- start section -->
+        
+        <section class="magic-cursor ipad-top-space-margin round-cursor bg-base-color bg-sliding-line overflow-hidden position-relative py-100px md-py-80px sm-py-60px" id="projects">
+            <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true" data-particle-options='{"particles": {"number": {"value": 10,"density": {"enable": true,"value_area": 2000}},"color": {"value": ["#000000", "#000000", "#000000", "#000000", "#000000"]},"shape": {"type": "circle","stroke":{"width":0,"color":"#000000"}},"opacity": {"value": 0.3,"random": false,"anim": {"enable": false,"speed": 1,"sync": false}},"size": {"value": 6,"random": true,"anim": {"enable": false,"sync": true}},"line_linked":{"enable":false,"distance":0,"color":"#ffffff","opacity":0.4,"width":1},"move": {"enable": true,"speed":1,"direction": "right","random": false,"straight": false}},"interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": false,"mode": "repulse"},"onclick": {"enable": false,"mode": "push"},"resize": true}},"retina_detect": false}'></div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10 text-center">
+                        <div class="fs-90 text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom">Projects</div>
+                        <p class="text-medium line-height-28 text-dark-gray">Explore my creative work and innovative solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+
+         <section class="pb-0 bg-gradient-top-very-light-gray">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 filter-content">
+                        <ul class="portfolio-transform portfolio-wrapper grid-loading grid grid-3col xxl-grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-medium" data-anime='{ "el": "childs", "translateY": [0, 0], "translateX": [0, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <li class="grid-sizer"></li>
+
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item selected digital branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/ignite.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Truenorth</span>
+                                                </div>
+
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item digital web branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/bolt.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Armchair</span>
+                                                </div>
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item web digital selected branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/beenbee.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-14 fw-500 text-black lh-initial mb-10">e-Commerce</span>
+                                                </div>
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item --> 
+
+
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item selected digital branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/ignite.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Truenorth</span>
+                                                </div>
+
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item digital web branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/bolt.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Armchair</span>
+                                                </div>
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item web digital selected branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/beenbee.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-14 fw-500 text-black lh-initial mb-10">e-Commerce</span>
+                                                </div>
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item --> 
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="mt-5 xs-mt-10 d-flex justify-content-center" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <!-- start pagination -->
+                    <ul class="pagination pagination-style-01 fs-13 alt-font fw-600 mb-0">
+                        <li class="page-item"><a class="page-link" href="#"><i class="feather icon-feather-arrow-left fs-18 d-xs-none"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="#">01</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">02</a></li>
+                        <li class="page-item"><a class="page-link" href="#">03</a></li>
+                        <li class="page-item"><a class="page-link" href="#">04</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="feather icon-feather-arrow-right fs-18 d-xs-none"></i></a></li>
+                    </ul>
+                    <!-- end pagination -->
+                </div> 
+            </div>
+            </div>
+        </section>
+
+        <!-- start footer -->
+        {% include 'components/footer.html' %}
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/vendors.min.js' %}"></script> 
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

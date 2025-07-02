@@ -1,0 +1,535 @@
+﻿{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Thashib T K | Portfolio </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="ThemeZaa">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- google fonts preconnect -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" href="{% static 'css/vendors.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/icon.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/freelancer.css' %}" />
+
+        <style>
+            .portfolio-image {
+                height: 16rem; /* Fixed height for all portfolio images */
+                width: 26rem
+                overflow: hidden;
+            }
+
+            .portfolio-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .hover-details {
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                width: 100%;
+                padding: 15px;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                transition: bottom 0.3s ease-in-out;
+            }
+
+            .portfolio-box:hover .hover-details {
+                bottom: 0;
+            }
+
+            @media (max-width: 768px) {
+                .portfolio-image {
+                    height: 220px;
+                }
+            }
+
+        </style>
+    </head>
+    <body data-mobile-nav-style="classic" class="custom-cursor">
+        <!-- start cursor -->
+        <div class="cursor-page-inner">
+            <div class="circle-cursor circle-cursor-inner"></div>
+            <div class="circle-cursor circle-cursor-outer"></div>
+        </div>
+        <!-- end cursor -->
+        <!-- start header -->
+        {% include 'components/header.html' %}
+        <!-- end header -->
+        <!-- start section -->
+        <section class="full-screen magic-cursor ipad-top-space-margin md-p-0 round-cursor bg-base-color bg-sliding-line overflow-hidden position-relative md-h-850px sm-h-750px" id="home">
+            <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true" data-particle-options='{"particles": {"number": {"value": 15,"density": {"enable": true,"value_area": 2000}},"color": {"value": ["#000000", "#000000", "#000000", "#000000", "#000000"]},"shape": {"type": "circle","stroke":{"width":0,"color":"#000000"}},"opacity": {"value": 0.3,"random": false,"anim": {"enable": false,"speed": 1,"sync": false}},"size": {"value": 8,"random": true,"anim": {"enable": false,"sync": true}},"line_linked":{"enable":false,"distance":0,"color":"#ffffff","opacity":0.4,"width":1},"move": {"enable": true,"speed":1,"direction": "right","random": false,"straight": false}},"interactivity": {"detect_on": "canvas","events": {"onhover": {"enable": false,"mode": "repulse"},"onclick": {"enable": false,"mode": "push"},"resize": true}},"retina_detect": false}'></div>
+           
+            <div class="container h-100">
+                <div class="row align-items-start align-items-lg-center h-100">
+                    <div class="col-xl-6 col-lg-8 md-pt-15" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <div class="fs-150 sm-fs-120 lh-110 text-white fw-700 ls-minus-6px"><span class="text-outline">Thashib</span><i class="bi bi-arrow-up-right icon-very-medium lh-0 ms-5px"></i></div>
+                        <div class="ps-20">
+                            <div class="fs-150 sm-fs-120 text-white fw-700 ls-minus-5px">T K</div>
+                            <div class="top-minus-40px sm-top-minus-20px right-minus-3px sm-right-0px position-relative">
+                                <span class="text-white fs-13 lh-36 fw-500 bg-black ps-20px pe-20px text-uppercase d-inline-block ls-1px mb-25px ms-5px">Python Developer</span>
+                                <div class="fs-19 lh-26 text-black fw-500 w-65 md-w-70 sm-w-100">A passionate Python/Django developer based in Kerala. I build backend systems and <span class="fw-700 text-decoration-line-bottom-medium text-black">modern web apps.</span></div>  
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="position-absolute right-100px bottom-minus-100px w-55 md-w-60 xs-w-100 md-right-150px xs-right-0px">
+                        <img src="{% static 'images/demo-freelancer-03.png' %}" class="position-absolute top-20 right-minus-50px" alt="" data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
+                        <img src="{% static 'images/demo-freelancer-04.png' %}" class="position-absolute top-50 left-150px z-index-9 animation-float" alt="" data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
+                        <div class="atropos" data-atropos>
+                            <div class="atropos-scale">
+                                <div class="atropos-rotate">
+                                    <div class="atropos-inner text-center">
+                                        <div data-atropos-offset="-5" class="position-absolute left-0px right-0px">
+                                            <img src="{% static 'images/demo-freelancer-01.png' %}" alt="">
+                                        </div>
+                                        <img data-atropos-offset="5" class="position-relative" src="{% static 'images/new/mypic4.png' %}" alt="">
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section id="about" class="big-section bg-gradient-top-very-light-gray pb-0 sm-pt-0">
+            <div class="overlap-section mb-2 top-minus-40px position-relative z-index-9 md-mb-0">
+                <div class="fs-335 text-white fw-700 ls-minus-10px md-ls-minus-5px text-end text-shadow-large">Python Developer</div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Section Heading -->
+                        <div class="row align-items-center mb-6" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <div class="col-10">
+                                <span class="text-base-color fw-700 text-uppercase fs-14 ls-05px">About Thashib T K</span>
+                            </div>
+                            <div class="col-2 text-end"> 
+                                <span class="text-base-color fs-14 fw-700">01</span>
+                            </div>
+                            <div class="col-12 mt-5px"> 
+                                <div class="separator-line-2px w-100 d-block bg-base-color"></div>
+                            </div>
+                        </div>
+
+                        <!-- Introduction Section -->
+                        <div class="row mb-6">
+                            <div class="col-xl-4 col-lg-5" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                <h4 class="fw-700 ls-minus-1px mb-20px">Backend-focused web developer crafting real-world Django apps.</h4>
+                                <p class="w-85 lg-w-100">I specialize in building scalable web applications using Python, Django, and modern frontend frameworks like React. Passionate about clean code, practical solutions, and performance-first development.</p>
+                            </div>
+
+                            <!-- Skills / Approach -->
+                            <div class="col-xl-8 col-lg-7" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                <div class="row align-items-center border-bottom border-color-light-medium-gray mb-30px pb-30px">
+                                    <div class="col-md-3">
+                                        <div class="fs-18 fw-600">Problem Solver</div>
+                                    </div>
+                                    <div class="col-md-9 last-paragraph-no-margin">
+                                        <p>I enjoy solving real-world problems through backend logic and system design, turning concepts into functional platforms.</p>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center border-bottom border-color-light-medium-gray mb-30px pb-30px">
+                                    <div class="col-md-3">
+                                        <div class="fs-18 fw-600">Clean Code</div>
+                                    </div>
+                                    <div class="col-md-9 last-paragraph-no-margin">
+                                        <p>I value writing maintainable, readable, and well-documented code that scales as your application grows.</p>
+                                    </div>
+                                </div> 
+                                <div class="row align-items-center">
+                                    <div class="col-md-3">
+                                        <div class="fs-18 fw-600">Team Player</div>
+                                    </div>
+                                    <div class="col-md-9 last-paragraph-no-margin">
+                                        <p>I’ve collaborated with design and dev teams in agile environments, and led web teams during college and internships.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <!-- Personal Info -->
+                        <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <div class="col last-paragraph-no-margin lg-mb-30px">
+                                <span class="fw-600">Expertise</span>
+                                <p>Python, Django, JavaScript, React, MySQL</p>
+                            </div>
+                            <div class="col last-paragraph-no-margin lg-mb-30px">
+                                <span class="fw-600">Location</span>
+                                <p>Malappuram, Kerala, India</p>
+                            </div>
+                            <div class="col last-paragraph-no-margin sm-mb-30px">
+                                <span class="fw-600">Date of birth</span>
+                                <p>06 March 2002</p>
+                            </div>
+                            <div class="col last-paragraph-no-margin">
+                                <span class="fw-600">Education</span>
+                                <p>B.Tech in Computer Science and Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <!-- end section -->
+        <!-- start section -->
+        <section id="work" class="pb-0 bg-gradient-top-very-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row align-items-center mb-6" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <div class="col-10">
+                                <span class="text-base-color fw-700 text-uppercase fs-14 ls-05px">Latest works</span>
+                            </div>
+                            <div class="col-2 text-end"> 
+                                <span class="text-base-color fs-14 fw-700">02</span>
+                            </div>
+                            <div class="col-12 mt-5px"> 
+                                <div class="separator-line-2px w-100 d-block bg-base-color"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 filter-content">
+                                <ul class="portfolio-transform portfolio-wrapper grid-loading grid grid-3col xxl-grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-medium" data-anime='{ "el": "childs", "translateY": [0, 0], "translateX": [0, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                    <li class="grid-sizer"></li>
+
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item selected digital branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/ignite.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Truenorth</span>
+                                                </div>
+
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item digital web branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/bolt.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Armchair</span>
+                                                </div>
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->
+                                    <!-- start portfolio item -->
+                                    <li class="grid-item web digital selected branding">
+                                        <div class="portfolio-box mousetip-wrapper">
+                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                                <div class="portfolio-image overflow-hidden">
+                                                    <img src="{% static 'images/new/beenbee.png' %}" alt="" />
+                                                    <div class="hover-details">
+                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="caption bg-base-color border-radius-4px">
+                                                    <span class="fs-14 fw-500 text-black lh-initial mb-10">e-Commerce</span>
+                                                </div>
+                                            </a>             
+                                        </div>
+                                    </li>
+                                    <!-- end portfolio item -->  
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 text-center mt-6 mb-6">
+                                <a href="#" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow">
+                                    <span>
+                                        <span class="btn-text">View all projects</span>
+                                        <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="overflow-hidden position-relative half-section overlap-height pb-0">
+            <div class="container-fluid overlap-gap-section">
+                <div class="row position-relative">
+                    <div class="col swiper swiper-width-auto text-center pb-30px sm-pb-0px" data-slider-options='{ "slidesPerView": "auto", "spaceBetween":60, "speed": 8000, "loop": true, "autoplay": { "delay":0, "disableOnInteraction": false }, "allowTouchMove": false, "effect": "slide" }'>
+                        <div class="swiper-wrapper marquee-slide">
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">Python.</div>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">Django.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">React.js.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">API Design.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">MySQL.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">RESTful.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">Full Stack.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">JavaScript.</div>
+                            </div>
+                            <!-- end client item --> 
+                        </div> 
+                    </div>  
+                </div>
+            </div> 
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="bg-base-color bg-sliding-line position-relative pb-0">
+            <div class="container-fluid overlap-section">
+                <div class="row position-relative">
+                    <div class="col swiper swiper-width-auto text-center pb-30px sm-pb-0px" data-slider-options='{ "slidesPerView": "auto", "spaceBetween":50, "speed": 8000, "loop": true, "autoplay": { "delay":0, "disableOnInteraction": false, "reverseDirection": true }, "allowTouchMove": false, "effect": "slide" }'>
+                        <div class="swiper-wrapper marquee-slide">
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">Python.</div>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">Django.</div>
+                            </div>
+                            <!-- end client item -->  
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">React.js.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">API Design.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">MySQL.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">RESTful.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">Full Stack.</div>
+                            </div>
+                            <!-- end client item --> 
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">JavaScript.</div>
+                            </div>
+                            <!-- end client item --> 
+                        </div> 
+                    </div>  
+                </div>
+            </div>
+            <div id="expertise" class="container overflow-y-hidden">
+                <div class="row align-items-end flex-column-reverse flex-lg-row">
+                    <div class="col-lg-7 position-relative overflow-hidden">
+                        <div class="outside-box-bottom-2 outside-box-left-5">
+                            <div class="atropos" data-atropos>
+                                <div class="atropos-scale">
+                                    <div class="atropos-rotate">
+                                        <div class="atropos-inner text-center overflow-visible">
+                                            <div data-atropos-offset="-1" class="position-absolute left-0px right-0px">
+                                                <img src="{% static 'images/demo-freelancer-01.png' %}" class="w-70" alt="">
+                                            </div>
+                                            <img data-atropos-offset="5" class="position-relative" src="{% static 'images/new/mypic3.png' %}" alt="">
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mb-6 mt-6 md-mb-0" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                        <h4 class="fw-600 text-white mb-20px ls-minus-1px">Creating impactful backend and frontend solutions.</h4>
+                        <p class="w-90 text-black xl-w-100">Experienced in Django, React.js, REST APIs, and MySQL. Focused on delivering user-focused, robust platforms.</p>
+                        <div class="progress-bar-style-01 mt-14 d-block">
+                            <!-- start progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">Django</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="web-design">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">90%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <!-- start progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">React.js</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="graphic-design">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">75%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <!-- start progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">MySQL</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">HTML</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">CSS</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">Bootstrap</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section id="experience" class="pb-0 bg-gradient-top-very-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row align-items-center mb-6" data-anime='{ "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                            <div class="col-10">
+                                <span class="text-base-color fw-700 text-uppercase fs-14 ls-05px">Professional Experience</span>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="text-base-color fs-14 fw-700">03</span>
+                            </div>
+                            <div class="col-12 mt-5px">
+                                <div class="separator-line-2px w-100 d-block bg-base-color"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-5 last-paragraph-no-margin md-mb-30px" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                <h4 class="fw-700 ls-minus-1px mb-20px">A growing Python developer with real-world project experience.</h4>
+                                <p class="w-85 lg-w-100">Hands-on experience in Django, React, and full stack web development. Skilled in building task tracking systems, collaboration platforms, and user-centric applications.</p>
+                            </div>
+                            <div class="col-xl-8 col-lg-7" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                                <!-- Experience Item -->
+                                <div class="row g-0 border-top border-color-light-medium-gray pt-15px pb-15px">
+                                    <div class="col-2 text-center align-self-center">
+                                        <span class="text-dark-gray fs-14 fw-600">2025</span>
+                                    </div>
+                                    <div class="col-8 ps-30px pe-30px">
+                                        <p>Python Full Stack Developer - <span class="fw-600 text-dark-gray">Ecodians Tech Innovators LLP</span><br><small>Built full stack apps with Django and React</small></p>
+                                    </div>
+                                    <div class="col-2 text-center align-self-center">
+                                        <span class="text-dark-gray fs-14 fw-600">2025 MAY - PRESENT</span>
+                                    </div>
+                                </div>
+                                <!-- Experience Item -->
+                                <div class="row g-0 border-top border-color-light-medium-gray pt-15px pb-15px">
+                                    <div class="col-2 text-center align-self-center">
+                                        <span class="text-dark-gray fs-14 fw-600">2024</span>
+                                    </div>
+                                    <div class="col-8 ps-30px pe-30px">
+                                        <p>Python Full Stack Developer Intern  - <span class="fw-600 text-dark-gray">One Team Solutions</span><br><small>Built full stack apps with Django and React</small></p>
+                                    </div>
+                                    <div class="col-2 text-center align-self-center">
+                                        <span class="text-dark-gray fs-14 fw-600">2024 AUG - 2025 FEB</span>
+                                    </div>
+                                </div>
+
+                                <!-- Experience Item -->
+                                <div class="row g-0 border-top border-color-light-medium-gray pt-15px pb-15px">
+                                    <div class="col-2 text-center align-self-center">
+                                        <span class="text-dark-gray fs-14 fw-600">2023</span>
+                                    </div>
+                                    <div class="col-8 ps-30px pe-30px">
+                                        <p>Web Team Lead - <span class="fw-600 text-dark-gray">Karma KMCT</span><br><small>Led website design & development for student-led org</small></p>
+                                    </div>
+                                    <div class="col-2 text-center align-self-center">
+                                        <span class="text-dark-gray fs-14 fw-600">2023 MAY - 2024 APR</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+
+        {% include 'components/footer.html' %}
+        <!-- end scroll progress -->
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/vendors.min.js' %}"></script> 
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
