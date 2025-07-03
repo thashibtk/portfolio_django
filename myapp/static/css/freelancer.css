@@ -98,8 +98,8 @@ header .navbar-brand img {
 }
 @media only screen and (max-width: 1600px) {
     .fs-335 {
-        font-size: 15.625rem;
-        line-height: 15.625rem;
+        font-size: 13.625rem;
+        line-height: 13.625rem;
     }
     .left-img {
         width: 300px;

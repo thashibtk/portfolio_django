@@ -24,6 +24,11 @@
         <link rel="stylesheet" href="{% static 'css/freelancer.css' %}" />
 
         <style>
+            .downres{
+                padding: 10px 20px !important;
+
+            }
+
             .portfolio-image {
                 height: 16rem; /* Fixed height for all portfolio images */
                 width: 26rem
@@ -80,10 +85,19 @@
                         <div class="fs-150 sm-fs-120 lh-110 text-white fw-700 ls-minus-6px"><span class="text-outline">Thashib</span><i class="bi bi-arrow-up-right icon-very-medium lh-0 ms-5px"></i></div>
                         <div class="ps-20">
                             <div class="fs-150 sm-fs-120 text-white fw-700 ls-minus-5px">T K</div>
-                            <div class="top-minus-40px sm-top-minus-20px right-minus-3px sm-right-0px position-relative">
-                                <span class="text-white fs-13 lh-36 fw-500 bg-black ps-20px pe-20px text-uppercase d-inline-block ls-1px mb-25px ms-5px">Python Developer</span>
-                                <div class="fs-19 lh-26 text-black fw-500 w-65 md-w-70 sm-w-100">A passionate Python/Django developer based in Kerala. I build backend systems and <span class="fw-700 text-decoration-line-bottom-medium text-black">modern web apps.</span></div>  
-                            </div>                            
+                            <div class="top-minus-40px sm-top-minus-20px right-minus-3px sm-right-0px position-relative" style="z-index: 10;">
+                                <span class="text-white fs-13 lh-36 fw-500 bg-black ps-20px pe-20px text-uppercase d-inline-block ls-1px mb-25px ms-5px">Full Stack Developer</span>
+                                <div class="fs-19 lh-26 text-black fw-500 w-65 md-w-70 sm-w-100">A passionate Full Stack Developer specializing in <span class="fw-700 text-decoration-line-bottom-medium text-black">Python/Django</span> backends, React/Next.js frontends, and MySQL databases. I create complete web applications from database to user interface.</div>
+                                <div class="mt-20px">
+                                    <a href="{{resume_url}}" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow downres" download>
+                                        <span>
+                                            <span class="btn-text">Download Resume</span>
+                                            <span class="btn-icon"><i class="bi bi-download"></i></span>
+                                            <span class="btn-icon"><i class="bi bi-download"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>                        
                         </div>
                     </div>
                     <div class="position-absolute right-100px bottom-minus-100px w-55 md-w-60 xs-w-100 md-right-150px xs-right-0px">
@@ -109,7 +123,7 @@
         <!-- start section -->
         <section id="about" class="big-section bg-gradient-top-very-light-gray pb-0 sm-pt-0">
             <div class="overlap-section mb-2 top-minus-40px position-relative z-index-9 md-mb-0">
-                <div class="fs-335 text-white fw-700 ls-minus-10px md-ls-minus-5px text-end text-shadow-large">Python Developer</div>
+                <div class="fs-335 text-white fw-700 ls-minus-10px md-ls-minus-5px text-end text-shadow-large">Full Stack Developer</div>
             </div>
             <div class="container">
                 <div class="row">
@@ -130,34 +144,34 @@
                         <!-- Introduction Section -->
                         <div class="row mb-6">
                             <div class="col-xl-4 col-lg-5" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                                <h4 class="fw-700 ls-minus-1px mb-20px">Backend-focused web developer crafting real-world Django apps.</h4>
-                                <p class="w-85 lg-w-100">I specialize in building scalable web applications using Python, Django, and modern frontend frameworks like React. Passionate about clean code, practical solutions, and performance-first development.</p>
+                                <h4 class="fw-700 ls-minus-1px mb-20px">Full Stack Developer creating end-to-end web solutions with Python expertise.</h4>
+                                <p class="w-85 lg-w-100">I build complete web applications from database design to user interfaces. Specializing in Python/Django backends, React/Next.js frontends, and MySQL databases - delivering scalable, performance-driven solutions.</p>
                             </div>
 
                             <!-- Skills / Approach -->
                             <div class="col-xl-8 col-lg-7" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                                 <div class="row align-items-center border-bottom border-color-light-medium-gray mb-30px pb-30px">
                                     <div class="col-md-3">
-                                        <div class="fs-18 fw-600">Problem Solver</div>
+                                        <div class="fs-18 fw-600">Full Stack Mindset</div>
                                     </div>
                                     <div class="col-md-9 last-paragraph-no-margin">
-                                        <p>I enjoy solving real-world problems through backend logic and system design, turning concepts into functional platforms.</p>
+                                        <p>I architect complete solutions from database schema to user experience, ensuring seamless integration between backend APIs and frontend interfaces.</p>
                                     </div>
                                 </div>
                                 <div class="row align-items-center border-bottom border-color-light-medium-gray mb-30px pb-30px">
                                     <div class="col-md-3">
-                                        <div class="fs-18 fw-600">Clean Code</div>
+                                        <div class="fs-18 fw-600">Python Specialist</div>
                                     </div>
                                     <div class="col-md-9 last-paragraph-no-margin">
-                                        <p>I value writing maintainable, readable, and well-documented code that scales as your application grows.</p>
+                                        <p>Deep expertise in Python/Django for building robust backends, RESTful APIs, and scalable web applications with clean, maintainable code.</p>
                                     </div>
                                 </div> 
                                 <div class="row align-items-center">
                                     <div class="col-md-3">
-                                        <div class="fs-18 fw-600">Team Player</div>
+                                        <div class="fs-18 fw-600">Modern Frontend</div>
                                     </div>
                                     <div class="col-md-9 last-paragraph-no-margin">
-                                        <p>I’ve collaborated with design and dev teams in agile environments, and led web teams during college and internships.</p>
+                                        <p>Proficient in JavaScript, React, and Next.js to create responsive, interactive user interfaces that connect seamlessly with backend services.</p>
                                     </div>
                                 </div> 
                             </div>
@@ -166,8 +180,8 @@
                         <!-- Personal Info -->
                         <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                             <div class="col last-paragraph-no-margin lg-mb-30px">
-                                <span class="fw-600">Expertise</span>
-                                <p>Python, Django, JavaScript, React, MySQL</p>
+                                <span class="fw-600">Tech Stack</span>
+                                <p>Python, Django, JavaScript, React, Next.js, MySQL</p>
                             </div>
                             <div class="col last-paragraph-no-margin lg-mb-30px">
                                 <span class="fw-600">Location</span>
@@ -210,64 +224,33 @@
                                     <li class="grid-sizer"></li>
 
                                     <!-- start portfolio item -->
+
+                                    {% for project in projects %}
                                     <li class="grid-item selected digital branding">
                                         <div class="portfolio-box mousetip-wrapper">
                                             <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
                                                 <div class="portfolio-image overflow-hidden">
-                                                    <img src="{% static 'images/new/ignite.png' %}" alt="" />
+                                                    <img src="{{ project.image.url }}" alt="" />
                                                     <div class="hover-details">
-                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
+                                                        <p class="text-white fs-14 mb-0">{{ project.short_description }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="caption bg-base-color border-radius-4px">
-                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Truenorth</span>
-                                                </div>
-
-                                            </a>             
-                                        </div>
-                                    </li>
-                                    <!-- end portfolio item -->
-                                    <!-- start portfolio item -->
-                                    <li class="grid-item digital web branding">
-                                        <div class="portfolio-box mousetip-wrapper">
-                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
-                                                <div class="portfolio-image overflow-hidden">
-                                                    <img src="{% static 'images/new/bolt.png' %}" alt="" />
-                                                    <div class="hover-details">
-                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="caption bg-base-color border-radius-4px">
-                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">Armchair</span>
+                                                    <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">{{ project.title }}</span>
                                                 </div>
                                             </a>             
                                         </div>
                                     </li>
-                                    <!-- end portfolio item -->
-                                    <!-- start portfolio item -->
-                                    <li class="grid-item web digital selected branding">
-                                        <div class="portfolio-box mousetip-wrapper">
-                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
-                                                <div class="portfolio-image overflow-hidden">
-                                                    <img src="{% static 'images/new/beenbee.png' %}" alt="" />
-                                                    <div class="hover-details">
-                                                        <p class="text-white fs-14 mb-0">A modern rebranding project including logo, color palette and identity assets.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="caption bg-base-color border-radius-4px">
-                                                    <span class="fs-14 fw-500 text-black lh-initial mb-10">e-Commerce</span>
-                                                </div>
-                                            </a>             
-                                        </div>
-                                    </li>
-                                    <!-- end portfolio item -->  
+                                    {% empty %}
+                                    <p>No projects found.</p>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12 text-center mt-6 mb-6">
-                                <a href="#" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow">
+                                <a href="{% url "projects" %}" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow">
                                     <span>
                                         <span class="btn-text">View all projects</span>
                                         <span class="btn-icon"><i class="feather icon-feather-arrow-right"></i></span>
