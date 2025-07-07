@@ -62,6 +62,9 @@ class Project(models.Model):
     # Optional: Slug for cleaner URLs
     slug = models.SlugField(unique=True, blank=True, max_length=255)
 
+    learned = models.TextField(blank=True, null=True, help_text="what learned")
+
+
     class Meta:
         verbose_name = "Project"
         verbose_name_plural = "Projects"
@@ -126,3 +129,20 @@ class ProjectImage(models.Model):
             if os.path.isfile(self.image.path):
                 os.remove(self.image.path)
         super().delete(*args, **kwargs)
+
+
+class Experience(models.Model):
+    title = models.CharField(max_length=200)
+    company = models.CharField(max_length=200)
+    description = models.TextField()
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
+    year = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+    
+    def formatted_date_range(self):
+        start = self.start_date.strftime("%Y %b").upper()
+        end = self.end_date.strftime("%Y %b").upper() if self.end_date else "PRESENT"
+        return f"{start} - {end}"

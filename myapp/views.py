@@ -22,10 +22,22 @@ def index(request):
     return render(request, 'index.html', context)
 
 def projects(request):
-    return render(request, 'projects.html')
 
-def project_details(request):
-    return render(request, 'project_details.html')
+    projects = Project.objects.all()
+    context = {
+        'projects': projects,
+    }
+    return render(request, 'projects.html', context)
+
+def project_details(request, slug):
+
+    project = Project.objects.get(slug=slug)
+
+    context = {
+        'project': project,
+    }
+
+    return render(request, 'project_details.html', context)
 
 
 def contact(request):

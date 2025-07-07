@@ -90,7 +90,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12 col-md-12 text-center">
                         <div class="fs-90 text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style="font-size: 4rem; position: relative; display: inline-block; padding-bottom: 15px;">
-                            CodeFlow – Developer Collaboration Platform
+                            {{project.title}}
                             <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 4px; background-color: #000000;"></div>
                             <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60%; height: 2px; background-color: #000000;"></div>
                         </div>
@@ -107,73 +107,67 @@
                     <div class="col-lg-6 md-mb-30px">
                         <!-- Main Image -->
                         <div class="mb-3">
-                            <img id="mainImage" src="https://placehold.co/600x400" 
+                            <img id="mainImage" src="{{project.main_image.url}}" 
                                 alt="CodeFlow Main Dashboard" class="w-100 rounded-lg shadow main-image">
                         </div>
                         
                         <!-- Sub Images Grid -->
                         
+
+
                         <div class="row g-2 subimgrow">
+                            <!-- Main image -->
                             <div class="col-3 subimg">
-                                <img src="https://placehold.co/600x400" 
-                                    alt="Main Dashboard" 
-                                    class="w-100 rounded shadow-sm thumbnail active"
-                                    data-main-src="https://placehold.co/600x400"
-                                    data-alt="CodeFlow Main Dashboard">
+                                <img 
+                                src="{{ project.main_image.url }}" 
+                                alt="{{ project.title }}" 
+                                class="w-100 rounded shadow-sm thumbnail active" 
+                                data-main-src="{{ project.main_image.url }}" 
+                                data-alt="{{ project.title }}">
                             </div>
-                            <div class="col-3 subimg">
-                                <img src="https://placehold.co/600x400" 
-                                    alt="Main Dashboard" 
-                                    class="w-100 rounded shadow-sm thumbnail active"
-                                    data-main-src="https://placehold.co/600x400"
-                                    data-alt="CodeFlow Main Dashboard">
-                            </div>
-                            <div class="col-3 subimg">
-                                <img src="https://placehold.co/600x400" 
-                                    alt="Main Dashboard" 
-                                    class="w-100 rounded shadow-sm thumbnail active"
-                                    data-main-src="https://placehold.co/600x400"
-                                    data-alt="CodeFlow Main Dashboard">
-                            </div>
-                            <div class="col-3 subimg">
-                                <img src="https://placehold.co/600x400" 
-                                    alt="Main Dashboard" 
-                                    class="w-100 rounded shadow-sm thumbnail active"
-                                    data-main-src="https://placehold.co/600x400"
-                                    data-alt="CodeFlow Main Dashboard">
-                            </div>
-                            <div class="col-3 subimg">
-                                <img src="https://placehold.co/600x400" 
-                                    alt="Main Dashboard" 
-                                    class="w-100 rounded shadow-sm thumbnail active"
-                                    data-main-src="https://placehold.co/600x400"
-                                    data-alt="CodeFlow Main Dashboard">
-                            </div>
-                            <div class="col-3 subimg">
-                                <img src="https://placehold.co/600x400" 
-                                    alt="Main Dashboard" 
-                                    class="w-100 rounded shadow-sm thumbnail active"
-                                    data-main-src="https://placehold.co/600x400"
-                                    data-alt="CodeFlow Main Dashboard">
-                            </div>
-                            
+
+                            <!-- Gallery images -->
+                            {% for img in project.gallery_images.all %}
+                                <div class="col-3 subimg">
+                                <img 
+                                    src="{{ img.image.url }}" 
+                                    alt="{{ img.caption|default:project.title }}" 
+                                    class="w-100 rounded shadow-sm thumbnail" 
+                                    data-main-src="{{ img.image.url }}" 
+                                    data-alt="{{ img.caption|default:project.title }}">
+                                </div>
+                            {% empty %}
+                                <!-- If no gallery images -->
+                                <div class="col-3 subimg">
+                                <img 
+                                    src="{% static 'images/placeholder.jpg' %}" 
+                                    alt="No images" 
+                                    class="w-100 rounded shadow-sm thumbnail"
+                                    data-main-src="{% static 'images/placeholder.jpg' %}"
+                                    data-alt="No images available">
+                                </div>
+                            {% endfor %}
+
                         </div>
+
+
                                                 
                     </div>
                     <div class="col-lg-6">
                         <p class="text-medium mb-20px mt-2">
-                            CodeFlow is a web-based platform that enables developers to collaborate on coding projects in real-time.
-                            Features include task boards, discussions, and GitHub integration. Designed to streamline remote teamwork.
+                            {{project.description}}
                         </p>
                         <ul class="list-style-02 text-dark-gray mb-10 mt-10">
-                            <li><strong>Tech Stack:</strong> Django, React, MySQL, Bootstrap</li>
-                            <li><strong>Duration:</strong> 2 months</li>
-                            <li><strong>Team Size:</strong> 3 developers</li>
+                            <li><strong>Tech Stack:</strong>{{project.tech_stack}}</li>
+                            <li><strong>Duration:</strong>{{project.duration}}</li>
+                            {% if project.team_size %}
+                            <li><strong>Team Size:</strong> {{project.team_size}}</li>
+                            {% endif %}
                         </ul>
-                        <a href="https://github.com/thashibtk/codeflow" class="btn btn-large btn-dark btn-box-shadow me-3 github" target="_blank">
+                        <a href="{{project.github_link}}" class="btn btn-large btn-dark btn-box-shadow me-3 github" target="_blank">
                             <i class="bi bi-github me-2"></i> GitHub
                         </a>
-                        <a href="https://codeflow.live" class="btn btn-large btn-transparent-dark-gray" target="_blank">
+                        <a href="{{project.live_demo_link}}" class="btn btn-large btn-transparent-dark-gray" target="_blank">
                             <i class="bi bi-box-arrow-up-right me-2"></i> Live Demo
                         </a>
                     </div>
@@ -183,8 +177,7 @@
                     <div class="col-lg-12">
                         <h3 class="fw-700 fs-30 text-dark-gray mb-20px">What I Learned</h3>
                         <p class="text-medium">
-                            Through this project, I deepened my understanding of full-stack development, REST API integration, user authentication,
-                            and deployment workflows using Docker and GitHub Actions. It improved my team collaboration and version control skills.
+                            {{project.learned}}
                         </p>
                     </div>
                 </div>

@@ -228,9 +228,13 @@
                                     {% for project in projects %}
                                     <li class="grid-item selected digital branding">
                                         <div class="portfolio-box mousetip-wrapper">
-                                            <a href="" data-group="lightbox-gallery" title="Lightbox gallery image title">
+                                            <a href="{% url 'project_details' project.slug %}">
                                                 <div class="portfolio-image overflow-hidden">
-                                                    <img src="{{ project.image.url }}" alt="" />
+                                                    {% if project.main_image and project.main_image.url %}
+                                                        <img src="{{ project.main_image.url }}" alt="{{ project.title }}">
+                                                    {% else %}
+                                                        <img src="{% static 'images/placeholder.jpg' %}" alt="No image">
+                                                    {% endif %}
                                                     <div class="hover-details">
                                                         <p class="text-white fs-14 mb-0">{{ project.short_description }}</p>
                                                     </div>
@@ -284,6 +288,9 @@
                             <div class="swiper-slide">
                                 <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">React.js.</div>
                             </div>
+                            <div class="swiper-slide">
+                                <div class="fs-180 xl-fs-120 sm-fs-80 text-extra-medium-gray fw-600 ls-minus-8px sm-ls-minus-4px word-break-normal">Next.js.</div>
+                            </div>
                             <!-- end client item --> 
                             <!-- start client item -->
                             <div class="swiper-slide">
@@ -330,6 +337,11 @@
                             <!-- start client item -->
                             <div class="swiper-slide">
                                 <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">Django.</div>
+                            </div>
+                            <!-- end client item -->  
+                            <!-- start client item -->
+                            <div class="swiper-slide">
+                                <div class="fs-150 xl-fs-120 sm-fs-80 text-black fw-600 ls-minus-5px sm-ls-minus-4px word-break-normal">Next.js</div>
                             </div>
                             <!-- end client item -->  
                             <!-- start client item -->
@@ -386,7 +398,7 @@
                     </div>
                     <div class="col-lg-5 mb-6 mt-6 md-mb-0" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                         <h4 class="fw-600 text-white mb-20px ls-minus-1px">Creating impactful backend and frontend solutions.</h4>
-                        <p class="w-90 text-black xl-w-100">Experienced in Django, React.js, REST APIs, and MySQL. Focused on delivering user-focused, robust platforms.</p>
+                        <p class="w-90 text-black xl-w-100">Experienced in Django, React.js, Next.js, REST APIs, and MySQL. Focused on delivering user-focused, robust platforms.</p>
                         <div class="progress-bar-style-01 mt-14 d-block">
                             <!-- start progress bar item -->
                             <div class="progress mb-12 sm-mb-20 bg-transparent">
@@ -406,6 +418,14 @@
                             <!-- end progress bar item -->
                             <!-- start progress bar item -->
                             <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">Next.js</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="graphic-design">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">70%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <!-- start progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
                                 <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">MySQL</div>
                                 <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
                                     <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
@@ -414,22 +434,29 @@
                             <!-- end progress bar item -->
                             <div class="progress mb-12 sm-mb-20 bg-transparent">
                                 <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">HTML</div>
-                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
-                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">95%</span>
                                 </div>
                             </div>
                             <!-- end progress bar item -->
                             <div class="progress mb-12 sm-mb-20 bg-transparent">
                                 <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">CSS</div>
-                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
-                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">95%</span>
                                 </div>
                             </div>
                             <!-- end progress bar item -->
                             <div class="progress mb-12 sm-mb-20 bg-transparent">
                                 <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">Bootstrap</div>
-                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
-                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">85%</span>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">86%</span>
+                                </div>
+                            </div>
+                            <!-- end progress bar item -->
+                            <div class="progress mb-12 sm-mb-20 bg-transparent">
+                                <div class="progress-bar-title d-inline-block text-black text-uppercase fs-14 fw-600">Tailwind</div>
+                                <div class="progress-bar bg-black" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="art-direction">
+                                    <span class="progress-bar-percent text-center bg-black fs-11 lh-12 text-white">82%</span>
                                 </div>
                             </div>
                             <!-- end progress bar item -->
