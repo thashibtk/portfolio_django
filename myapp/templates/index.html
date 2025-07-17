@@ -5,14 +5,15 @@
         <title>Thashib T K | Portfolio </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="ThemeZaa">
+        <meta name="author" content="Thashib">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
+        <meta name="description" content="Thashib T K — Full Stack Developer skilled in Python, Django & React. Explore my portfolio, recent projects & contact me for web development opportunities.">
         <!-- favicon icon -->
         <link rel="shortcut icon" href="">
         <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
         <!-- google fonts preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,7 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
         <link rel="stylesheet" href="{% static 'css/responsive.css' %}"/>
         <link rel="stylesheet" href="{% static 'css/freelancer.css' %}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo/logo.png' %}">
 
         <style>
             .downres{
@@ -63,6 +65,51 @@
                 }
             }
 
+            .portfolio-image {
+                position: relative;
+                width: 100%;
+                height: 250px;
+                overflow: hidden;
+                }
+
+            .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            }
+
+            .portfolio-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            }
+
+            .caption {
+            padding: 10px;
+            text-align: center;
+            }
+
+            @media (max-width: 768px) {
+            .portfolio-image {
+                height: 200px;
+            }
+            }
+
+            .project-title-sm {
+            background-color: #c2001c;
+            color: #fff;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 0;
+            }
+
+            .protitle{
+                line-height : 4rem;
+                font-size: 3rem;
+            }
+
         </style>
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
@@ -82,11 +129,11 @@
             <div class="container h-100">
                 <div class="row align-items-start align-items-lg-center h-100">
                     <div class="col-xl-6 col-lg-8 md-pt-15" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <div class="fs-150 sm-fs-120 lh-110 text-white fw-700 ls-minus-6px"><span class="text-outline">Thashib</span><i class="bi bi-arrow-up-right icon-very-medium lh-0 ms-5px"></i></div>
+                        <h1 class="fs-150 sm-fs-120 lh-110 text-white fw-700 ls-minus-6px"><span class="text-outline">Thashib</span><i class="bi bi-arrow-up-right icon-very-medium lh-0 ms-5px"></i></h1>
                         <div class="ps-20">
                             <div class="fs-150 sm-fs-120 text-white fw-700 ls-minus-5px">T K</div>
                             <div class="top-minus-40px sm-top-minus-20px right-minus-3px sm-right-0px position-relative" style="z-index: 10;">
-                                <span class="text-white fs-13 lh-36 fw-500 bg-black ps-20px pe-20px text-uppercase d-inline-block ls-1px mb-25px ms-5px">Full Stack Developer</span>
+                                <h2 class="text-white fs-13 lh-36 fw-500 bg-black ps-20px pe-20px text-uppercase d-inline-block ls-1px mb-25px ms-5px">Full Stack Developer</h2>
                                 <div class="fs-19 lh-26 text-black fw-500 w-65 md-w-70 sm-w-100">A passionate Full Stack Developer specializing in <span class="fw-700 text-decoration-line-bottom-medium text-black">Python/Django</span> backends, React/Next.js frontends, and MySQL databases. I create complete web applications from database to user interface.</div>
                                 <div class="mt-20px">
                                     <a href="{{resume_url}}" class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-round-edge btn-box-shadow downres" download>
@@ -101,16 +148,16 @@
                         </div>
                     </div>
                     <div class="position-absolute right-100px bottom-minus-100px w-55 md-w-60 xs-w-100 md-right-150px xs-right-0px">
-                        <img src="{% static 'images/demo-freelancer-03.png' %}" class="position-absolute top-20 right-minus-50px" alt="" data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
-                        <img src="{% static 'images/demo-freelancer-04.png' %}" class="position-absolute top-50 left-150px z-index-9 animation-float" alt="" data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
+                        <img src="{% static 'images/demo-freelancer-03.png' %}" class="position-absolute top-20 right-minus-50px" alt="thashi" data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
+                        <img src="{% static 'images/demo-freelancer-04.png' %}" class="position-absolute top-50 left-150px z-index-9 animation-float" alt="thashi" data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)">
                         <div class="atropos" data-atropos>
                             <div class="atropos-scale">
                                 <div class="atropos-rotate">
                                     <div class="atropos-inner text-center">
                                         <div data-atropos-offset="-5" class="position-absolute left-0px right-0px">
-                                            <img src="{% static 'images/demo-freelancer-01.png' %}" alt="">
+                                            <img src="{% static 'images/demo-freelancer-01.png' %}" alt="thashi">
                                         </div>
-                                        <img data-atropos-offset="5" class="position-relative" src="{% static 'images/new/mypic4.png' %}" alt="">
+                                        <img data-atropos-offset="5" class="position-relative" src="{% static 'images/new/mypic4.webp' %}" alt="thashi">
                                     </div> 
                                 </div>
                             </div>
@@ -232,17 +279,21 @@
                                                 <div class="portfolio-image overflow-hidden">
                                                     {% if project.main_image and project.main_image.url %}
                                                         <img src="{{ project.main_image.url }}" alt="{{ project.title }}">
-                                                    {% else %}
-                                                        <img src="{% static 'images/placeholder.jpg' %}" alt="No image">
                                                     {% endif %}
                                                     <div class="hover-details">
                                                         <p class="text-white fs-14 mb-0">{{ project.short_description }}</p>
                                                     </div>
                                                 </div>
-                                                <div class="caption bg-base-color border-radius-4px">
+
+                                                <!-- Visible on large screens -->
+                                                <div class="caption bg-base-color border-radius-4px d-none d-md-block">
                                                     <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">{{ project.title }}</span>
                                                 </div>
-                                            </a>             
+
+                                                <!-- Visible only on small screens -->
+                                                <p class="project-title-sm d-block d-md-none">{{ project.title }}</p>
+                                            </a>
+       
                                         </div>
                                     </li>
                                     {% empty %}
@@ -387,9 +438,9 @@
                                     <div class="atropos-rotate">
                                         <div class="atropos-inner text-center overflow-visible">
                                             <div data-atropos-offset="-1" class="position-absolute left-0px right-0px">
-                                                <img src="{% static 'images/demo-freelancer-01.png' %}" class="w-70" alt="">
+                                                <img src="{% static 'images/demo-freelancer-01.png' %}" class="w-70" alt="thashi">
                                             </div>
-                                            <img data-atropos-offset="5" class="position-relative" src="{% static 'images/new/mypic3.png' %}" alt="">
+                                            <img data-atropos-offset="5" class="position-relative" src="{% static 'images/new/mypic3.webp' %}" alt="thashi">
                                         </div> 
                                     </div>
                                 </div>

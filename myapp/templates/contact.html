@@ -2,13 +2,18 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        <title>Thashib T K | Portfolio </title>
+        <title>Thashib T K | Contact </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="ThemeZaa">
+        <meta name="author" content="Thashib">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
-        <!-- favicon icon -->
+        <meta name="description" content="Thashib T K — Full Stack Developer skilled in Python, Django & React. Explore my portfolio, recent projects & contact me for web development opportunities.">
+
+        <title>Thashib T K | Contact</title>
+
+
+        
+
         <link rel="shortcut icon" href="">
         <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -16,6 +21,7 @@
         <!-- google fonts preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo/logo.png' %}">
         <!-- style sheets and font icons  -->
         <link rel="stylesheet" href="{% static 'css/vendors.min.css' %}"/>
         <link rel="stylesheet" href="{% static 'css/icon.min.css' %}"/>
@@ -65,9 +71,33 @@
                 background-color: #ffffff !important;
                 color: #000000  !important;
             }
-            </style>
+
+            .protitle{
+            line-height : 4rem;
+            font-size: 3rem;
+             }
+        </style>
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
+
+        {% if messages %}
+            <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+                {% for message in messages %}
+                    <div class="toast-message {{ message.tags }}" style="
+                        background: {% if message.tags == 'success' %}#1EFF00{% else %}#C2001C{% endif %};
+                        color: #fff;
+                        padding: 15px 20px;
+                        margin-bottom: 10px;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                        opacity: 0.95;
+                        ">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
 
         <!-- end header -->
         {% include 'components/header.html' %}
@@ -80,8 +110,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 col-md-12 text-center">
-                        <div class="fs-90 text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style="font-size: 4rem; border-bottom: 4px solid #000000; padding-bottom: 20px; display: inline-block;">
-                            Get In Touch – Let's Build Something Amazing
+                        <div class="protitle text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style="font-size: 4rem; border-bottom: 4px solid #000000; padding-bottom: 20px; display: inline-block;">
+                            Get In Touch
                         </div>
                         <p class="text-medium line-height-28 text-white">Ready to discuss your next project? I'm here to help bring your ideas to life.</p>
                     </div>
@@ -164,37 +194,37 @@
                     <div class="col-lg-6">
                         <div class="bg-white p-5 rounded-lg shadow">
                             <h4 class="fw-700 mb-4">Send Me a Message</h4>
-                            <form>
+                            <form method="POST">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
                                         <label for="fullname" class="form-label fw-600">Full Name</label>
-                                        <input type="text" class="form-control" id="fullname" required>
+                                        <input type="text" class="form-control" id="fullname" name="fullname" required>
                                     </div>
 
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="email" class="form-label fw-600">Email Address</label>
-                                        <input type="email" class="form-control" id="email" required>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="phone" class="form-label fw-600">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" required>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="subject" class="form-label fw-600">Subject</label>
-                                    <select class="form-select" id="subject" required>
+                                    <select class="form-select" id="subject" name="subject" required>
                                         <option value="">Choose a subject...</option>
                                         <option value="web-development">Web Development</option>
                                         <option value="collaboration">Project Collaboration</option>
-                                        <option value="consultation">Technical Consultation</option>
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
                                 <div class="mb-4">
                                     <label for="message" class="form-label fw-600">Message</label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Tell me about your project or how I can help you..." required></textarea>
+                                    <textarea class="form-control" name="message" id="message" rows="5" placeholder="Tell me about your project or how I can help you..." required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-large btn-dark-gray btn-box-shadow w-100 blkbtn">
                                     <i class="bi bi-send me-2"></i> Send Message
@@ -245,6 +275,14 @@
         </section>
 
 
+        <script>
+            setTimeout(function() {
+                const toastContainer = document.getElementById('toast-container');
+                if (toastContainer) {
+                    toastContainer.style.display = 'none';
+                }
+            }, 3000);
+        </script>
 
 
         <!-- start footer -->

@@ -2,17 +2,18 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        <title>Thashib T K | Portfolio </title>
+        <title>Thashib T K | Projects </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="ThemeZaa">
+        <meta name="author" content="Thashib">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
-        <!-- favicon icon -->
+        <meta name="description" content="Thashib T K — Full Stack Developer skilled in Python, Django & React. Explore my portfolio, recent projects & contact me for web development opportunities.">
+
         <link rel="shortcut icon" href="">
         <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo/logo.png' %}">
         <!-- google fonts preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +58,50 @@
                 }
             }
 
+            .protitle{
+            line-height : 3.8rem;
+            font-size: 3rem;
+            }
 
+            .portfolio-image {
+                position: relative;
+                width: 100%;
+                height: 250px;
+                overflow: hidden;
+                }
+
+                .portfolio-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                }
+
+                .portfolio-box {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                }
+
+                .caption {
+                padding: 10px;
+                text-align: center;
+                }
+
+                @media (max-width: 768px) {
+                .portfolio-image {
+                    height: 200px;
+                }
+                }
+
+                .project-title-sm {
+                background-color: #c2001c;
+                color: #fff;
+                text-align: center;
+                padding: 8px 12px;
+                border-radius: 4px;
+                font-size: 16px;
+                margin: 0;
+                }
         </style>
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
@@ -74,8 +118,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 col-md-12 text-center">
-                        <div class="fs-90 text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style="font-size: 4rem; border-bottom: 4px solid #000000; padding-bottom: 20px; display: inline-block;">
-                            My Projects – A Glimpse into My Work
+                        <div class="protitle text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style="font-size: 4rem; border-bottom: 4px solid #000000; padding-bottom: 20px; display: inline-block;">
+                            My Projects
                         </div>
                         <p class="text-medium line-height-28 text-white">Explore a selection of my recent projects, showcasing diverse skills and successful outcomes.</p>
                     </div>
@@ -95,19 +139,26 @@
                             
                             <li class="grid-sizer"></li>
 
-                            {% for project in projects %}
+                            {% for project in page_obj  %}
                                 <li class="grid-item selected digital branding projectcard">
                                     <div class="portfolio-box mousetip-wrapper">
                                         <a href="{% url 'project_details' project.slug %}">
                                             <div class="portfolio-image overflow-hidden">
-                                                <img src="{{ project.main_image.url }}" alt="{{ project.title }}">
+                                                {% if project.main_image and project.main_image.url %}
+                                                    <img src="{{ project.main_image.url }}" alt="{{ project.title }}">
+                                                {% endif %}
                                                 <div class="hover-details">
-                                                    <p class="text-white fs-14 mb-0">{{ project.short_description|default:"View details" }}</p>
+                                                    <p class="text-white fs-14 mb-0">{{ project.short_description }}</p>
                                                 </div>
                                             </div>
-                                            <div class="caption bg-base-color border-radius-4px">
+
+                                            <!-- Visible on large screens -->
+                                            <div class="caption bg-base-color border-radius-4px d-none d-md-block">
                                                 <span class="fs-17 text-white fw-500 lh-10 d-block mb-10">{{ project.title }}</span>
                                             </div>
+
+                                            <!-- Visible only on small screens -->
+                                            <p class="project-title-sm d-block d-md-none">{{ project.title }}</p>
                                         </a>
                                     </div>
                                 </li>
@@ -124,18 +175,52 @@
                 </div>
 
                 <div class="row">
-                <div class="mt-5 xs-mt-10 d-flex justify-content-center" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                    <!-- start pagination -->
-                    <ul class="pagination pagination-style-01 fs-13 alt-font fw-600 mb-0">
-                        <li class="page-item"><a class="page-link" href="#"><i class="feather icon-feather-arrow-left fs-18 d-xs-none"></i></a></li>
-                        <li class="page-item"><a class="page-link" href="#">01</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">02</a></li>
-                        <li class="page-item"><a class="page-link" href="#">03</a></li>
-                        <li class="page-item"><a class="page-link" href="#">04</a></li>
-                        <li class="page-item"><a class="page-link" href="#"><i class="feather icon-feather-arrow-right fs-18 d-xs-none"></i></a></li>
-                    </ul>
-                    <!-- end pagination -->
-                </div> 
+                    <div class="mt-5 xs-mt-10 d-flex justify-content-center" 
+                        data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+
+                        <!-- start pagination -->
+                        <ul class="pagination pagination-style-01 fs-13 alt-font fw-600 mb-0">
+
+                            {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                    <i class="feather icon-feather-arrow-left fs-18 d-xs-none"></i>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="feather icon-feather-arrow-left fs-18 d-xs-none"></i></a>
+                            </li>
+                            {% endif %}
+
+                            {% for num in page_obj.paginator.page_range %}
+                                {% if num == page_obj.number %}
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">{{ num|stringformat:"02d" }}</a>
+                                    </li>
+                                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ num }}">{{ num|stringformat:"02d" }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                    <i class="feather icon-feather-arrow-right fs-18 d-xs-none"></i>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="feather icon-feather-arrow-right fs-18 d-xs-none"></i></a>
+                            </li>
+                            {% endif %}
+
+                        </ul>
+                        <!-- end pagination -->
+                    </div>
+
             </div>
             </div>
         </section>

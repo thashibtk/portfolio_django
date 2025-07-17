@@ -2,13 +2,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        <title>Thashib T K | Portfolio </title>
+        <title>Thashib T K | {{project.title}} </title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="ThemeZaa">
+        <meta name="author" content="Thashib">
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta name="description" content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 52+ ready demos.">
-        <!-- favicon icon -->
+        <meta name="description" content="Thashib T K — Full Stack Developer skilled in Python, Django & React. Explore my portfolio, recent projects & contact me for web development opportunities.">
         <link rel="shortcut icon" href="">
         <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -16,6 +15,7 @@
         <!-- google fonts preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo/logo.png' %}">
         <!-- style sheets and font icons  -->
         <link rel="stylesheet" href="{% static 'css/vendors.min.css' %}"/>
         <link rel="stylesheet" href="{% static 'css/icon.min.css' %}"/>
@@ -24,57 +24,61 @@
         <link rel="stylesheet" href="{% static 'css/freelancer.css' %}" />
 
         <style>
-        .thumbnail {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0.7;
-            border: 2px solid transparent;
-        }
-        
-        .thumbnail:hover {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-        
-        .thumbnail.active {
-            opacity: 1;
-            border: 2px solid #000000;
-            transform: scale(1.02);
-        }
-        
-        .main-image {
-            transition: opacity 0.3s ease;
-        }
-        
-        .bg-gradient-top-very-light-gray {
-            background: linear-gradient(to bottom, #f8f9fa, #ffffff);
-        }
-        
-        .list-style-02 {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .list-style-02 li {
-            padding: 5px 0;
-            border-left: 3px solid #c2001c;
-            padding-left: 15px;
-            margin-bottom: 10px;
-        }
-        .github:hover {
-            background-color: #ffffff;
-            color: #000000;
-        }
+            .thumbnail {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                opacity: 0.7;
+                border: 2px solid transparent;
+            }
+            
+            .thumbnail:hover {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            
+            .thumbnail.active {
+                opacity: 1;
+                border: 2px solid #000000;
+                transform: scale(1.02);
+            }
+            
+            .main-image {
+                transition: opacity 0.3s ease;
+            }
+            
+            .bg-gradient-top-very-light-gray {
+                background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+            }
+            
+            .list-style-02 {
+                list-style: none;
+                padding-left: 0;
+            }
+            
+            .list-style-02 li {
+                padding: 5px 0;
+                border-left: 3px solid #c2001c;
+                padding-left: 15px;
+                margin-bottom: 10px;
+            }
+            .github:hover {
+                background-color: #ffffff;
+                color: #000000;
+            }
 
-        .subimg {
-            padding-right: 0px !important;
-            padding-left: 10px !important;
-        }
-        .subimgrow{
-            padding-left: 10px !important;
-            padding-right: 12px !important;
-        }
-    </style>
+            .subimg {
+                padding-right: 0px !important;
+                padding-left: 10px !important;
+            }
+            .subimgrow{
+                padding-left: 10px !important;
+                padding-right: 12px !important;
+            }
+            .protitle{
+                line-height : 3.5rem;
+                font-size: 3rem;
+            }
+        </style>
     </head>
     <body data-mobile-nav-style="classic" class="custom-cursor">
 
@@ -89,7 +93,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 col-md-12 text-center">
-                        <div class="fs-90 text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style="font-size: 4rem; position: relative; display: inline-block; padding-bottom: 15px;">
+                        <div class="protitle text-white fw-700 ls-minus-3px text-shadow-large margin-30px-bottom md-margin-20px-bottom" style=" position: relative; display: inline-block; padding-bottom: 15px;">
                             {{project.title}}
                             <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80%; height: 4px; background-color: #000000;"></div>
                             <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60%; height: 2px; background-color: #000000;"></div>
@@ -164,12 +168,16 @@
                             <li><strong>Team Size:</strong> {{project.team_size}}</li>
                             {% endif %}
                         </ul>
+                        {% if project.github_link %}
                         <a href="{{project.github_link}}" class="btn btn-large btn-dark btn-box-shadow me-3 github" target="_blank">
                             <i class="bi bi-github me-2"></i> GitHub
-                        </a>
+                        </a>    
+                        {% endif %}
+                        {% if project.live_demo_link %}
                         <a href="{{project.live_demo_link}}" class="btn btn-large btn-transparent-dark-gray" target="_blank">
                             <i class="bi bi-box-arrow-up-right me-2"></i> Live Demo
                         </a>
+                        {% endif %}
                     </div>
                 </div>
 

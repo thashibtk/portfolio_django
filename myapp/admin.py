@@ -27,3 +27,16 @@ class ProjectAdmin(admin.ModelAdmin):
 class ProjectImageAdmin(admin.ModelAdmin):
     list_display = ('project', 'caption', 'order', 'uploaded_at')
     list_filter = ('project',)
+
+@admin.register(Experience)
+class ExperienceAdmin(admin.ModelAdmin):
+    list_display = ('title', 'company', 'start_date', 'end_date', 'year')
+    list_filter = ('start_date', 'end_date')
+    search_fields = ('title', 'company', 'description')
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'subject')
+    list_filter = ('subject', 'created_at')
+    search_fields = ('full_name', 'email', 'phone', 'message')
+    ordering = ('-created_at',)
