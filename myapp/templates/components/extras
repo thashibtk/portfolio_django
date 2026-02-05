@@ -1,11 +1,11 @@
-<link rel="canonical" href="https://thashibtk.xyz/" />
+{% load static %}
+<link rel="canonical" href="{{ SITE_URL }}/" />
 <meta property="og:title" content="Thashib T K — Full Stack Developer" />
 <meta property="og:description" content="Portfolio of Thashib T K, Python, Django & React developer. View projects & contact me for web development." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thashibtk.xyz/" />
-<meta property="og:image" content="https://www.thashibtk.xyz/static/images/logo/logo.png" />
+<meta property="og:url" content="{{ SITE_URL }}/" />
+<meta property="og:image" content="{{ SITE_URL }}{% static 'images/logo/logo.png' %}" />
 <meta property="og:updated_time" content="2025-07-17T12:00:00+05:30" />
-
 
 <script type="application/ld+json">
 {
@@ -13,7 +13,7 @@
   "@type": "Person",
   "name": "Thashib T K",
   "jobTitle": "Full Stack Developer",
-  "url": "https://yourdomain.com/",
+  "url": "{{ SITE_URL }}/",
   "sameAs": [
     "https://linkedin.com/in/your-profile",
     "https://github.com/your-profile"
