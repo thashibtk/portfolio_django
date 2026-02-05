@@ -6,7 +6,7 @@ def index(request):
 
     resume = Resume.objects.latest('uploaded_at')
 
-    projects = Project.objects.all().order_by('-created_at')[:3]
+    projects = Project.objects.filter(is_active=True).order_by('-created_at')[:3]
 
 
     if resume:
@@ -24,7 +24,7 @@ def index(request):
 from django.core.paginator import Paginator
 
 def projects(request):
-    project_list = Project.objects.all().order_by('-created_at')
+    project_list = Project.objects.filter(is_active=True).order_by('-created_at')
     paginator = Paginator(project_list, 6)  # Show 6 projects per page
 
     page_number = request.GET.get('page')

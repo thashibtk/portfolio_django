@@ -62,6 +62,8 @@ class Project(models.Model):
 
     learned = models.TextField(blank=True, null=True, help_text="what learned")
 
+    is_active = models.BooleanField(default=True, help_text="Is this project currently active?")
+
 
     class Meta:
         verbose_name = "Project"
